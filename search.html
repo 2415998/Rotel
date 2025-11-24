@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotel – Search</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #6b6bff;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #6b6bff;
+        }
+
+        /* Page title + filters */
+        .page-container {
+            padding: 40px 50px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-box {
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .filter-box input,
+        .filter-box select {
+            padding: 12px 15px;
+            width: 240px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
+
+        /* Cards Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 14px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .card-location {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .price-rating {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #6b6bff;
+            font-weight: bold;
+        }
+
+        .rating {
+            background: #ffe98f;
+            color: #444;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Rotel</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Host Dashboard</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="page-container">
+
+        <!-- Title -->
+        <h2>Find Your Perfect Stay</h2>
+
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filter-box">
+                <label>Destination</label>
+                <input type="text" placeholder="Enter city or country">
+            </div>
+
+            <div class="filter-box">
+                <label>Price Range</label>
+                <select>
+                    <option>Any Price</option>
+                    <option>£0 - £50</option>
+                    <option>£50 - £100</option>
+                    <option>£100+</option>
+                </select>
+            </div>
+
+            <div class="filter-box">
+                <label>Minimum Rating</label>
+                <select>
+                    <option>Any Rating</option>
+                    <option>4+</option>
+                    <option>4.5+</option>
+                    <option>5.0</option>
+                </select>
+            </div>
+        </div>
+
+
+        <!-- Accommodation Cards -->
+        <div class="grid">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="room1.jpg" alt="Cozy Downtown Apartment">
+                <div class="card-content">
+                    <div class="card-title">Cozy Downtown Apartment</div>
+                    <div class="card-location">📍 Barcelona, Spain</div>
+                    <div class="price-rating">
+                        <div class="price">£68/night</div>
+                        <div class="rating">⭐ 4.8</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="room2.jpg" alt="Beachfront Villa">
+                <div class="card-content">
+                    <div class="card-title">Beachfront Villa</div>
+                    <div class="card-location">📍 Bali, Indonesia</div>
+                    <div class="price-rating">
+                        <div class="price">£96/night</div>
+                        <div class="rating">⭐ 4.9</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="room3.jpg" alt="Mountain Retreat">
+                <div class="card-content">
+                    <div class="card-title">Mountain Retreat</div>
+                    <div class="card-location">📍 Swiss Alps, Switzerland</div>
+                    <div class="price-rating">
+                        <div class="price">£160/night</div>
+                        <div class="rating">⭐ 5.0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <img src="room4.jpg" alt="Historic City Loft">
+                <div class="card-content">
+                    <div class="card-title">Historic City Loft</div>
+                    <div class="card-location">📍 Rome, Italy</div>
+                    <div class="price-rating">
+                        <div class="price">£76/night</div>
+                        <div class="rating">⭐ 4.7</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

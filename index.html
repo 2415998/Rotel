@@ -2,13 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotel – Home</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #6b6bff;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #6b6bff;
+        }
+
+        /* Hero */
+        .hero img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            border-bottom: 6px solid #6b6bff;
+        }
+
+        /* Welcome */
+        .welcome {
+            text-align: center;
+            padding: 60px 30px;
+        }
+
+        .welcome h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .welcome p {
+            max-width: 650px;
+            margin: auto;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* Search box */
+        .search-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .search-box input {
+            width: 320px;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 15px;
+        }
+
+        .search-box button {
+            padding: 12px 22px;
+            background: #6b6bff;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background: #5858e6;
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">Rotel</div>
         <ul class="nav-links">
@@ -21,16 +119,18 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
+    <!-- Hero Image -->
+    <div class="hero">
         <img src="hero.jpg" alt="Travel Map">
-    </header>
+    </div>
 
     <!-- Welcome Section -->
     <section class="welcome">
         <h1>Welcome to Rotel</h1>
-        <p>Connecting travelers with safe, inclusive, and authentic accommodations around the world. 
-           Your journey to meaningful travel starts here.</p>
+        <p>
+            Connecting travelers with safe, inclusive, and authentic accommodations around the world.
+            Your journey to meaningful travel starts here.
+        </p>
 
         <div class="search-box">
             <input type="text" placeholder="Where do you want to go?">

@@ -1,180 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rotel – Host Dashboard</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rotel — Host Dashboard</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-        }
+  <style>
+    :root{
+      --primary:#6b6bff;
+      --muted:#6b6b6b;
+      --bg:#ffffff;
+      --card:#f8f9fb;
+      --input-border:#dcdfe6;
+      --radius:12px;
+      --container-padding:40px;
+    }
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:var(--bg);
+      color:#222;
+      line-height:1.45;
+    }
 
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 40px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
-        }
+    /* NAVBAR */
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 40px;
+      background:#fff;
+      border-bottom:1px solid #e8e9ef;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .logo{font-weight:700;color:var(--primary);font-size:20px}
+    .nav-links{display:flex;gap:18px;list-style:none}
+    .nav-links a{color:#555;text-decoration:none;font-size:14px}
+    .nav-links a:hover{color:var(--primary)}
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #6b6bff;
-        }
+    /* PAGE WRAPPER */
+    .wrap{
+      max-width:1100px;
+      margin:28px auto;
+      padding: var(--container-padding);
+      background:#fff;
+      border-radius:16px;
+      box-shadow: 0 6px 20px rgba(99,99,120,0.08);
+      border: 1px solid rgba(99,99,120,0.05);
+    }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-            margin: 0;
-        }
+    h1{font-size:22px;margin-bottom:12px;color:#222}
+    .tabs{display:flex;gap:24px;border-bottom:1px solid #eef0f6;padding-bottom:12px;margin-bottom:22px}
+    .tab{font-weight:600;color:var(--primary);font-size:15px;padding-bottom:8px}
+    .tab.inactive{color:#8b8fa3;font-weight:600}
 
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            font-size: 16px;
-        }
+    /* FORM STYLES */
+    form{margin-top:8px}
+    .form-row{margin-bottom:14px}
+    label{
+      display:block;
+      font-size:13px;
+      color:#6b6b8a;
+      margin-bottom:8px;
+    }
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea{
+      width:100%;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid var(--input-border);
+      background: #fff;
+      font-size:15px;
+      color:#222;
+      outline: none;
+      transition: box-shadow .12s, border-color .12s;
+    }
+    textarea{min-height:110px;resize:vertical;padding-top:12px}
+    input:focus, textarea:focus, select:focus{
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(107,107,255,0.08);
+    }
 
-        .nav-links a:hover {
-            color: #6b6bff;
-        }
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
 
-        /* Page Container */
-        .page-container {
-            padding: 40px 50px;
-        }
+    .btn-row{margin-top:22px}
+    .btn{
+      display:inline-block;
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
+      font-size:15px;
+    }
+    .btn:hover{filter:brightness(.95)}
 
-        h2 {
-            font-size: 32px;
-            margin-bottom: 25px;
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 10px;
-        }
-
-        .tab {
-            font-size: 16px;
-            cursor: pointer;
-            color: #6b6bff;
-            font-weight: bold;
-        }
-
-        .tab.inactive {
-            color: #777;
-        }
-
-        /* Form Styling */
-        form {
-            max-width: 700px;
-        }
-
-        label {
-            display: block;
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 6px;
-            margin-top: 18px;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            font-size: 16px;
-        }
-
-        textarea {
-            resize: vertical;
-            height: 100px;
-        }
-
-        .submit-btn {
-            margin-top: 25px;
-            padding: 12px 22px;
-            background: #6b6bff;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .submit-btn:hover {
-            background: #5757e6;
-        }
-
-    </style>
+    /* Responsive */
+    @media (max-width:900px){
+      .wrap{padding:24px;margin:18px}
+      .two-col{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">Rotel</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="#">Host Dashboard</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Login</a></li>
-        </ul>
+  <!-- NAV -->
+  <header class="navbar" role="banner">
+    <div class="logo">Rotel</div>
+    <nav aria-label="Main" role="navigation">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Host Dashboard</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- PAGE CONTENT -->
-    <div class="page-container">
+  <!-- CONTENT -->
+  <main>
+    <section class="wrap" aria-labelledby="hostdash">
+      <h1 id="hostdash">Host Dashboard</h1>
 
-        <h2>Host Dashboard</h2>
+      <div class="tabs" role="tablist">
+        <div class="tab" role="tab" aria-selected="true">Create Listing</div>
+        <div class="tab inactive" role="tab" aria-selected="false">Manage Bookings</div>
+      </div>
 
-        <!-- Tabs -->
-        <div class="tabs">
-            <div class="tab">Create Listing</div>
-            <div class="tab inactive">Manage Bookings</div>
+      <form action="#" method="post" novalidate>
+        <div class="form-row">
+          <label for="title">Property Title</label>
+          <input id="title" name="title" type="text" placeholder="e.g., Cozy Downtown Apartment" />
         </div>
 
-        <!-- Listing Form -->
-        <form>
+        <div class="form-row">
+          <label for="location">Location</label>
+          <input id="location" name="location" type="text" placeholder="City, Country" />
+        </div>
 
-            <label>Property Title</label>
-            <input type="text" placeholder="e.g., Cozy Downtown Apartment">
+        <div class="form-row">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" placeholder="Describe your property..."></textarea>
+        </div>
 
-            <label>Location</label>
-            <input type="text" placeholder="City, Country">
+        <div class="two-col">
+          <div class="form-row">
+            <label for="price">Price per Night (£)</label>
+            <input id="price" name="price" type="number" min="0" placeholder="68" />
+          </div>
 
-            <label>Description</label>
-            <textarea placeholder="Describe your property..."></textarea>
-
-            <label>Price per Night (£)</label>
-            <input type="number" placeholder="68">
-
-            <label>Property Type</label>
-            <select>
-                <option>Select type</option>
-                <option>Apartment</option>
-                <option>Villa</option>
-                <option>Studio</option>
-                <option>House</option>
-                <option>Guest Suite</option>
+          <div class="form-row">
+            <label for="ptype">Property Type</label>
+            <select id="ptype" name="ptype">
+              <option value="">Select type</option>
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>Studio</option>
+              <option>House</option>
+              <option>Guest Suite</option>
             </select>
+          </div>
+        </div>
 
-            <button class="submit-btn">Create Listing</button>
-
-        </form>
-
-    </div>
+        <div class="btn-row">
+          <button class="btn" type="submit">Create Listing</button>
+        </div>
+      </form>
+    </section>
+  </main>
 
 </body>
 </html>

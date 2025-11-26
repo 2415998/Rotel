@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rotel – About</title>
+
+  <style>
+    :root{
+      --primary:#6b6bff;
+      --text-dark:#222;
+      --text-muted:#666;
+      --card-bg:#ffffff;
+      --input-border:#dcdfe6;
+      --radius:14px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:"Segoe UI", Arial, sans-serif;
+      background:#fff;
+      color:var(--text-dark);
+      line-height:1.5;
+    }
+
+    /* NAVBAR */
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 40px;
+      background:#fff;
+      border-bottom:1px solid #e3e5ed;
+    }
+    .logo{font-size:22px;font-weight:700;color:var(--primary)}
+    .nav-links{list-style:none;display:flex;gap:25px}
+    .nav-links a{
+      text-decoration:none;
+      color:#555;
+      font-size:15px;
+    }
+    .nav-links a:hover{color:var(--primary)}
+
+    /* PAGE CONTAINER */
+    .container{
+      max-width:1200px;
+      margin:40px auto;
+      padding:0 40px; 
+    }
+
+    h1{font-size:32px;margin-bottom:28px}
+    h2{
+      font-size:22px;
+      margin-top:35px;
+      margin-bottom:12px;
+      color:var(--primary);
+      font-weight:600;
+    }
+
+    p{
+      color:var(--text-muted);
+      margin-bottom:18px;
+      max-width:900px;
+    }
+
+    /* CORE VALUES GRID */
+    .values-grid{
+      margin-top:25px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:20px;
+    }
+
+    .value-card{
+      background:#ffffff;
+      border-radius:var(--radius);
+      padding:22px 18px;
+      text-align:center;
+      border:1px solid #e8e9ef;
+      box-shadow:0 4px 14px rgba(0,0,0,0.05);
+    }
+
+    .value-title{
+      margin-top:12px;
+      font-size:18px;
+      font-weight:600;
+    }
+    .value-text{
+      margin-top:8px;
+      color:var(--text-muted);
+      font-size:14px;
+      line-height:1.4;
+    }
+
+    /* Simple placeholder icons */
+    .icon{
+      width:46px;
+      height:46px;
+      margin:auto;
+      display:block;
+    }
+
+    @media(max-width:700px){
+      .container{padding:0 20px}
+      .nav-links{display:none}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="logo">Rotel</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Search</a></li>
+      <li><a href="#">Host Dashboard</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <main class="container">
+
+    <h1>Our Story</h1>
+
+    <h2>The Rotel Mission</h2>
+    <p>
+      Rotel was founded on the belief that travel should be accessible, safe, and inclusive for everyone.
+      We’re building a global community where travelers can discover authentic accommodations while hosts
+      can share their spaces with confidence.
+    </p>
+    <p>
+      Our platform prioritizes safety through verified listings, secure payments, and comprehensive host and
+      guest reviews. We’re committed to creating an environment where diversity is celebrated and everyone 
+      feels welcome.
+    </p>
+
+    <h2>Our Core Values</h2>
+
+    <div class="values-grid">
+
+      <div class="value-card">
+        <img class="icon" src="https://via.placeholder.com/46?text=S" alt="Safety Icon">
+        <div class="value-title">Safety First</div>
+        <div class="value-text">
+          Every listing is verified and every user is authenticated to ensure secure experiences.
+        </div>
+      </div>
+
+      <div class="value-card">
+        <img class="icon" src="https://via.placeholder.com/46?text=I" alt="Inclusivity Icon">
+        <div class="value-title">Inclusivity</div>
+        <div class="value-text">
+          We welcome travelers and hosts from all backgrounds, cultures, and identities.
+        </div>
+      </div>
+
+      <div class="value-card">
+        <img class="icon" src="https://via.placeholder.com/46?text=C" alt="Community Icon">
+        <div class="value-title">Community</div>
+        <div class="value-text">
+          Building meaningful connections between travelers and local hosts worldwide.
+        </div>
+      </div>
+
+      <div class="value-card">
+        <img class="icon" src="https://via.placeholder.com/46?text=A" alt="Authenticity Icon">
+        <div class="value-title">Authenticity</div>
+        <div class="value-text">
+          Discover genuine local experiences and stay in unique, character-filled spaces.
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Our Commitment</h2>
+    <p>
+      We’re dedicated to maintaining the highest standards of safety and inclusivity. Our team works around
+      the clock to ensure every interaction on our platform is positive, secure, and respectful. We believe 
+      that when people from different backgrounds come together through travel, amazing things happen.
+    </p>
+
+  </main>
+
+</body>
+</html>

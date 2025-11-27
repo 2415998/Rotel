@@ -9,14 +9,15 @@
         :root{
             --primary:#6b6bff;
             --text-muted:#666;
-            --bg-gradient:linear-gradient(135deg,#6a6bf7,#8570f8,#9b75f8);
+            --gradient:linear-gradient(135deg, #6a6bf7, #8c71f8);
         }
 
         *{box-sizing:border-box;margin:0;padding:0}
+
         body{
-            font-family:Arial,Helvetica,sans-serif;
-            background:var(--bg-gradient);
+            font-family:Arial, Helvetica, sans-serif;
             min-height:100vh;
+            background:var(--gradient);
         }
 
         /* NAVBAR */
@@ -48,65 +49,68 @@
         }
 
         /* LOGIN CARD */
-        .login-wrapper{
-            margin:60px auto;
+        .login-box{
             width:100%;
             max-width:480px;
             background:#ffffff;
+            margin:60px auto;
             padding:40px 35px;
             border-radius:18px;
-            box-shadow:0 6px 20px rgba(0,0,0,0.08);
+            box-shadow:0 6px 20px rgba(0,0,0,0.1);
         }
 
         .tab-row{
             display:flex;
             justify-content:center;
-            margin-bottom:25px;
+            margin-bottom:30px;
+            border-radius:10px;
+            overflow:hidden;
+            border:1px solid #dcdcdc;
         }
         .tab-btn{
             flex:1;
             text-align:center;
             padding:12px 0;
+            font-size:15px;
             cursor:pointer;
-            font-weight:600;
-            border:1px solid #ddd;
-            background:#f9f9f9;
-            border-radius:6px 0 0 6px;
-        }
-        .tab-btn.active{
-            background:white;
-            color:var(--primary);
-            border-bottom:2px solid var(--primary);
+            background:#f5f5ff;
+            color:#555;
+            border-right:1px solid #dcdcdc;
         }
         .tab-btn:last-child{
-            border-radius:0 6px 6px 0;
+            border-right:none;
+        }
+        .active{
+            background:#ffffff;
+            color:var(--primary);
+            font-weight:600;
         }
 
         h2{
             text-align:center;
-            margin-bottom:6px;
-            font-size:24px;
+            margin-bottom:8px;
+            font-size:26px;
         }
         .subtitle{
             text-align:center;
             color:var(--text-muted);
-            margin-bottom:25px;
+            margin-bottom:30px;
+            font-size:14px;
         }
 
         label{
             display:block;
             margin-bottom:6px;
-            color:#444;
             font-size:14px;
+            color:#444;
         }
 
-        input[type="email"],
-        input[type="password"]{
+        input{
             width:100%;
             padding:12px;
             border-radius:10px;
             border:1px solid #dcdcdc;
-            margin-bottom:18px;
+            margin-bottom:20px;
             font-size:15px;
         }
 
@@ -114,8 +118,8 @@
             display:flex;
             justify-content:space-between;
             align-items:center;
-            font-size:14px;
             margin-bottom:25px;
+            font-size:14px;
         }
 
         .remember-row a{
@@ -127,17 +131,18 @@
             width:100%;
             padding:12px;
             background:var(--primary);
-            color:#fff;
             border:none;
             border-radius:8px;
+            color:#fff;
             font-size:16px;
             cursor:pointer;
         }
         .btn:hover{
-            filter:brightness(0.94);
+            filter:brightness(0.93);
         }
     </style>
 </head>
+
 <body>
 
     <!-- NAVBAR -->
@@ -154,7 +159,7 @@
     </header>
 
     <!-- LOGIN CARD -->
-    <div class="login-wrapper">
+    <div class="login-box">
 
         <div class="tab-row">
             <div class="tab-btn active">Login</div>
@@ -176,7 +181,7 @@
                 <a href="#">Forgot password?</a>
             </div>
 
-            <button class="btn" type="submit">Sign In</button>
+            <button type="submit" class="btn">Sign In</button>
         </form>
 
     </div>
